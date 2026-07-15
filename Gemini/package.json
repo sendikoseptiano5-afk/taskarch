@@ -1,9 +1,0 @@
-{
-  "name": "taskflow-beyond-1a",
-  "version": "1.0.0",
-  "private": true,
-  "description": "TaskFlow Beyond 1.a — Sistem Manajemen Tugas Kuliah, dengan fitur Tanya AI via Netlify Function proxy ke Gemini API.",
-  "dependencies": {
-    "@google/genai": "^0.3.0"
-  }
-}
