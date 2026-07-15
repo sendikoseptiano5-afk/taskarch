@@ -1,0 +1,12 @@
+{
+  "name": "TaskFlow Beyond 1.a",
+  "short_name": "TaskFlow",
+  "description": "Sistem Manajemen Tugas Kuliah — Beyond 1.a",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f0f1a",
+  "theme_color": "#6366f1",
+  "lang": "id",
+  "icons": []
+}
