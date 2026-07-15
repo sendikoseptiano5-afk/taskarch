@@ -4,3 +4,8 @@
 
 [functions]
   node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/"
+  to = "/TaskFlow-Next.html"
+  status = 200
