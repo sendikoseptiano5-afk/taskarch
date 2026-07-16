@@ -1,7 +1,7 @@
 {
-  "name": "TaskFlow Beyond 1.a",
+  "name": "TaskFlow Beyond 2.a",
   "short_name": "TaskFlow",
-  "description": "Sistem Manajemen Tugas Kuliah — Beyond 1.a",
+  "description": "Sistem Manajemen Tugas Kuliah — Beyond 2.a",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
