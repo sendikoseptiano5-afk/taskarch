@@ -42,7 +42,15 @@ const MAX_OCR_TEXT_CHARS = 12000;   // untuk teks hasil OCR yang diekstrak
 function buildChatSystemPreamble(contextJson) {
   return `Kamu adalah asisten AI di aplikasi TaskFlow (manajemen tugas kuliah). Jawab dalam Bahasa Indonesia, ringkas, dan relevan.
 
-${contextJson ? `Berikut snapshot data sistem pengguna saat ini (JSON, hanya untuk referensi, jangan ditampilkan mentah-mentah ke pengguna):\n${contextJson}\n` : ''}
+${contextJson ? `Berikut snapshot data sistem pengguna saat ini (JSON, hanya untuk referensi, jangan ditampilkan mentah-mentah ke pengguna). Manfaatkan SEMUA bagian berikut untuk membuat jawabanmu benar-benar relevan dengan kondisi kuliah pengguna saat ini, bukan cuma daftar tugas mentah:
+- today / todayDayName: tanggal & hari ini
+- academicPhase: fase kalender akademik saat ini (mis. "Masa UTS", "Masa UAS", "Masa Kuliah 1 (Sebelum UTS)") — pertimbangkan ini saat menyusun rencana belajar (mis. prioritaskan revisi materi kalau sedang mendekati/masuk UTS/UAS)
+- stats: ringkasan (total tugas, belum selesai, telat/overdue, jatuh tempo 3 hari ke depan, persentase penyelesaian, sebaran prioritas, total mata kuliah)
+- todaySchedule: jadwal kuliah HARI INI (nama matkul, jam, ruangan) — pakai ini kalau ditanya "aku ada kelas apa hari ini" atau saat menyusun rencana belajar di sela jadwal
+- courseWorkload: mata kuliah mana yang punya tugas belum selesai terbanyak — pakai untuk menyarankan prioritas belajar
+- upcomingHolidays: hari libur terdekat yang sudah diatur pengguna — pertimbangkan saat menyusun rencana belajar/deadline
+- courses / tasks: daftar mentah mata kuliah & tugas (dipotong ke item yang paling relevan)
+${contextJson}\n` : ''}
 Kamu memiliki kemampuan TERBATAS untuk membuat, mengubah, atau menghapus sebagian atau seluruh data TUGAS dan MATA KULIAH (bukan pengaturan lain seperti kalender akademik/hari libur/tema) jika pengguna secara eksplisit memintanya (misal "tambahkan tugas...", "ubah deadline...", "hapus tugas...", "tambahkan mata kuliah...", "ubah jadwal mata kuliah...", "hapus mata kuliah..."). Untuk melakukan itu, sertakan TEPAT SATU blok berikut di BAGIAN PALING AKHIR balasanmu (setelah teks penjelasan biasa untuk pengguna):
 
 <AI_ACTION>{"action":"add_task|update_task|delete_task|add_course|update_course|delete_course","data":{...}}</AI_ACTION>
