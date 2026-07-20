@@ -1,9 +1,9 @@
-// TaskFlow Beyond 1.a — Service Worker (opsional, PWA/offline)
+// TaskFlow Beyond 3.a — Service Worker (opsional, PWA/offline)
 // Hanya aktif kalau file ini disajikan lewat server (http/https) satu folder
 // bersama TaskFlow-Next.html & manifest.json. Tidak berpengaruh apa pun kalau
 // dibuka langsung dari file lokal (file://).
 
-const CACHE_NAME = 'taskflow-beyond-1a-v1';
+const CACHE_NAME = 'taskflow-beyond-3a-v1';
 // Sengaja hanya menyimpan shell (halaman itu sendiri) — library CDN eksternal
 // (pdf.js, tesseract, dsb) tetap diambil online seperti biasa saat tersedia,
 // dan gagal secara wajar (bukan mem-block halaman) saat offline.
