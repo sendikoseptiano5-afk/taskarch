@@ -173,7 +173,7 @@ export async function handler(event, context) {
 
       const trimmedText = String(text).slice(0, MAX_OCR_TEXT_CHARS);
       const response = await ai.models.generateContent({
-        model: 'gemini-flash-latest',
+        model: 'gemini-3.6-flash',
         contents: buildPrompt(trimmedText),
       });
 
@@ -200,7 +200,7 @@ export async function handler(event, context) {
     const fullPrompt = buildChatSystemPreamble(trimmedContext) + trimmedPrompt;
 
     const response = await ai.models.generateContent({
-      model: 'gemini-flash-latest',
+      model: 'gemini-3.6-flash',
       contents: fullPrompt,
     });
 
